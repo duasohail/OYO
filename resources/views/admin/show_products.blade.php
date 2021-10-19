@@ -56,8 +56,8 @@
                                         <td>{{$pro->quantity}}</td>
                                         <td>{{$pro->type}}</td>
                                         <td ><img style='border-radius:0%;width:100px; height:75px' src='productimage/{{$pro->image}}'></td>
-                                        <td><a href='#'><button class='btn btn-sm btn-success'>Edit</button></a></td>
-                                        <td><a href='#'><button class='btn btn-sm btn-danger'>Delete</button></a></td>
+                                        <td><a href="{{url('edit_product',$pro->id)}}"><button class='btn btn-sm btn-success'>Edit</button></a></td>
+                                        <td><a href="{{url('delete_product',$pro->id)}}"><button class='btn btn-sm btn-danger'>Delete</button></a></td>
                                     </tr>
                                 
                                 @endforeach
