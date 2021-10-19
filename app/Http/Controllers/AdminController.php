@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\product;
 
+
 class AdminController extends Controller
 {
     //
@@ -36,5 +37,10 @@ class AdminController extends Controller
         return redirect()->back()->with('msg','Product added successfully');
 
         
+    }
+
+    public function show_products(){
+        $data = product::all();
+        return view('admin.show_products',['products'=>$data]);
     }
 }

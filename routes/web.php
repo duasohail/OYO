@@ -34,3 +34,4 @@ route::get('contact',[HomeController::class, 'contact']);
 // admin
 route::get('products',[AdminController::class, 'products']);
 route::post('uploadproducts',[AdminController::class, 'uploadproducts']);
+route::get('show_products',[AdminController::class, 'show_products']);

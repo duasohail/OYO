@@ -1,33 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-  <head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
-
-    <title>ecommerce store laravel</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="theme/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<!--
-
-TemplateMo 546 Sixteen Clothing
-
-https://templatemo.com/tm-546-sixteen-clothing
-
--->
-
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="theme/assets/css/fontawesome.css">
-    <link rel="stylesheet" href="theme/assets/css/templatemo-sixteen.css">
-    <link rel="stylesheet" href="theme/assets/css/owl.css">
-
-  </head>
-
+@include('user.headscripts')
   <body>
 
     <!-- ***** Preloader Start ***** -->
@@ -126,13 +97,16 @@ https://templatemo.com/tm-546-sixteen-clothing
             </div>
           </div>
           @foreach($products as $pro)
-          <div class="col-md-4">
-            <div class="product-item">
+          <div class="col-md-4 ">
+            <div class="product-item shadow">
               <a href="#"><img src="productimage/{{$pro->image}}" height='200px' alt=""></a>
+              
+            
               <div class="down-content">
                 <a href="#"><h4>{{$pro->title}}</h4></a>
                 <h6>{{$pro->price}} AED</h6>
                 <p>{{$pro->description}}</p>
+                
 
                 <ul class="stars">
                 @if($pro->rating == '1')
@@ -159,7 +133,11 @@ https://templatemo.com/tm-546-sixteen-clothing
                   <li><i class="fa fa-star"></i></li>
                 @endif
                 </ul>
+                
                 <span>Reviews (32)</span>
+              </div>
+              <div class='d-flex justify-content-center mb-3 '>
+                  <button class='btn btn-sm btn-danger'>Add To Bag</button>
               </div>
             </div>
           </div>
