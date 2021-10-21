@@ -28,6 +28,7 @@ route::get('/',[HomeController::class, 'index']);
 route::get('allproducts',[HomeController::class, 'allproducts']);
 route::get('aboutoyo',[HomeController::class, 'aboutoyo']);
 route::get('contact',[HomeController::class, 'contact']);
+route::get('search',[HomeController::class, 'search']);
 
 
 
@@ -36,3 +37,5 @@ route::get('products',[AdminController::class, 'products']);
 route::post('uploadproducts',[AdminController::class, 'uploadproducts']);
 route::get('show_products',[AdminController::class, 'show_products']);
 route::get('delete_product/{id}',[AdminController::class, 'delete_product']);
+route::get('edit_products/{id}',[AdminController::class, 'edit_product']);
+route::post('updateproduct',[AdminController::class, 'updateproduct']);

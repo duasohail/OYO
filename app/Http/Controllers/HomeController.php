@@ -40,4 +40,9 @@ class HomeController extends Controller
     public function contact(){
         return view('user.contact');
     }
+    public function search(Request $request){
+        $search= $request->search;
+        $data = product::where('title', 'like','%'.$search.'%')->get();
+        return view("user.home",  ['products'=>$data]);
+    }
 }

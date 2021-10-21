@@ -48,4 +48,34 @@ class AdminController extends Controller
         $data->delete();
         return redirect()->back()->with('msg','Product deleted successfully');
     }
+    public function edit_product($id){
+        $data = product::find($id);
+        return view('admin.edit_products',['data'=>$data]);
+        
+    }
+     public function updateproduct(request $request){
+        $data = product::find($request->id);
+        
+
+        if($image=$request->file)
+        {
+        
+            $image_name=$image->getClientOriginalName();
+            // $image_custName=pathinfo($image, PATHINFO_FILENAME).','.pathinfo($image, PATHINFO_EXTENSION);
+            // print_r($image_name);
+            $request->file->move('productimage', $image_name);
+
+            $data->image=$image_name;
+        }
+        $data->title=$request->p_title;
+        $data->description=$request->p_desc;
+        $data->price=$request->price;
+        $data->quantity=$request->quantity;
+        $data->type=$request->type;
+
+        $data->save();
+
+        return redirect()->back()->with('msg','Product updated successfully');
+        
+    }
 }

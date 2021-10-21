@@ -94,7 +94,15 @@
             <div class="section-heading">
               <h2>Latest Products</h2>
               <a href="allproducts">view all products <i class="fa fa-angle-right"></i></a>
+              <div class='mb-3 d-flex justify-content-end'>
+                <form class='form-inline' method='get' action="{{url('/search')}}">
+                  @csrf
+                  <input class='form-control' type="text" placeholder="SEARCH" name='search'>
+                  <button class="btn btn-sm btn-danger p-2 ml-1" style="border-radius:0%;">Search</button>
+                </form>
             </div>
+            </div>
+           
           </div>
           @foreach($products as $pro)
           <div class="col-md-4 ">
