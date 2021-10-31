@@ -207,8 +207,21 @@ https://templatemo.com/tm-546-sixteen-clothing
                             <option value='10'>10</option>
                         </select>
                     </p>
-                    <button style="border-rdius:0px;" data-toggle="tooltip" data-placement="bottom" title="add to cart" class='btn btn-danger btn-sm p-2 mt-3 rounded-0' >ADD TO CART</button>
-                    <a href="{{url('favourite',$products->id)}}" style="border-rdius:0px;" data-toggle="tooltip" data-placement="bottom" title="Favourite"  class='btn btn-danger btn-sm p-2 mt-3 rounded-0' > <i class="fa fa-heart text-light"></i> </a>
+                    <div class="d-flex ">
+                      <button style="border-rdius:0px;" data-toggle="tooltip" data-placement="bottom" title="add to cart" class='btn btn-danger btn-sm p-2 mt-3 rounded-0' >ADD TO CART</button>
+                      <form action="{{url('favourite')}}" method='post' enctype='multipart/form-data'>
+                      @csrf 
+                        <input type="hidden" value="{{$products->id}}" name='id' >
+                        
+                        <?php if($favs){ ?>
+
+                          <a href="{{url('delete_fav',$products->id)}}" style="border-rdius:0px;" data-toggle="tooltip" data-placement="bottom" title="Favourite"  class='btn btn-outline-danger btn-sm ml-2 p-2 mt-3 rounded-0' > <i class="fa fa-heart text-danger"></i> </a>
+
+                    <?php }else{?>
+                        <button style="border-rdius:0px;" data-toggle="tooltip" data-placement="bottom" title="Favourite"  class='btn btn-danger btn-sm ml-2 p-2 mt-3 rounded-0' > <i class="fa fa-heart-o" aria-hidden="true"></i> </button>
+                    <?php } ?>
+                      </form>
+                    </div>
                     
                      
                  </div>

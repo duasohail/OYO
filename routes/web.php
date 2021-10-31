@@ -46,4 +46,5 @@ route::post('updateproduct',[AdminController::class, 'updateproduct']);
 route::get('product_detail/{id}',[AdminController::class, 'product_detail']);
 
 //fav
-route::get('favourite/{id}',[HomeController::class, 'favourite']);
+route::post('favourite',[HomeController::class, 'favourite']);
+route::get('delete_fav/{id}',[HomeController::class, 'delete_fav']);

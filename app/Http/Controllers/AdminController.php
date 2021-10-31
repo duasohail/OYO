@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\product;
+use App\Models\favourite;
 
 
 class AdminController extends Controller
@@ -96,6 +97,7 @@ class AdminController extends Controller
     }
     public function product_detail($id){
         $data = product::find($id);
-        return view('user.product_detail',['products'=>$data]);
+        $fav_data = favourite::find($id);
+        return view('user.product_detail',['products'=>$data, 'favs'=>$fav_data]);
     }
 }

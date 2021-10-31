@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\product;
+use App\Models\favourite;
 
 class HomeController extends Controller
 {
@@ -45,8 +46,31 @@ class HomeController extends Controller
         $data = product::where('title', 'like','%'.$search.'%')->get();
         return view("user.home",  ['products'=>$data]);
     }
-    public function favourite($id){
-        $data = product::find($id);
-        return view('user.favourite',['products'=>$data]);
+    public function favourite(Request $request){
+        $page_id= $request->id;
+        $productdata = product::find($page_id);
+        $id=$productdata['id'];
+        $title=$productdata['title'];
+        $description=$productdata['description'];
+        $price=$productdata['price'];
+        $quantity=$productdata['quantity'];
+        $image=$productdata['image'];
+
+        $data= new favourite; //database table name from model
+        $data->id=$id;
+        $data->title=$title;
+        $data->description=$description;
+        $data->price=$price;
+        $data->quantity=$quantity;
+        $image=$image;
+        $data->save();
+
+        return redirect()->back()->with('favmsg','Added');
+    }
+
+    public function delete_fav($id){
+        $data = favourite::find($id);
+        $data->delete();
+        return redirect()->back();
     }
 }

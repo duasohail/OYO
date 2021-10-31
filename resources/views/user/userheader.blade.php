@@ -41,7 +41,7 @@
                 
             @endif
             <li class="nav-item">
-                <a class="nav-link" href="contact"><i style='font-size:20px;' class='fa fa-heart'></i></a>
+                <a class="nav-link" href="user.favourite"><i style='font-size:20px;' class='fa fa-heart'></i></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="contact"><i style='font-size:20px;' class="fa fa-shopping-cart"></i></a>

@@ -139,13 +139,15 @@ https://templatemo.com/tm-546-sixteen-clothing
            
           </div>
 
-         
+          <!-- {{$favs}} -->
           
-          <div class='row' style="height:120px;">
-             <div class=col-4>hwbufebeuwubrewiurbiurvbwub3ui
-             </div>
-             <div class=col-8>hbjnkm,l
-             </div>
+          <div class='row bg-dark no-gutters' style="height:120px;">
+            <div class="col-5 bg-light">
+                {{$favs['image']}}
+            </div>
+            <div class="col-7 bg-danger">
+                
+            </div>
           </div>
          
           
