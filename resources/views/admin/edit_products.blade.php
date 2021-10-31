@@ -78,6 +78,18 @@
                             Type
                         </label>
                         <input class='form-control w-50 mb-2 text-dark' type='text' value="{{$data->type}}" name='type'>
+                        <label >
+                            Size
+                        </label>
+                        <input class='form-control w-50 mb-2 text-dark' type='text' value="{{$data->size}}" name='size'>
+                        <label >
+                            Color
+                        </label>
+                        <input class='form-control w-50 mb-2 text-dark' type='text' value="{{$data->color}}" name='color'>
+                        <label >
+                            Brand
+                        </label>
+                        <input class='form-control w-50 mb-2 text-dark' type='text' value="{{$data->brand}}" name='brand'>
                         
                         <label >
                             Product Image

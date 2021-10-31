@@ -33,7 +33,7 @@
                     @csrf
                         <label >
                             Product Title
-                        </label>
+                     </label>
                         <input class='form-control w-50 mb-2 text-dark' name='p_title' type='text'>
 
                         <label >
@@ -58,6 +58,23 @@
                             Rating
                         </label>
                         <input class='form-control w-50 mb-2 text-dark' type='text' name='rating'>
+                        <label >
+                            Size
+                        </label>
+                        <input class='mb-2 ml-3 text-dark' type='checkbox' name='sizes[]' value='XS'> XS
+                        <input class='mb-2 ml-3 text-dark' type='checkbox' name='sizes[]' value='S'> S
+                        <input class='mb-2 ml-3 text-dark' type='checkbox' name='sizes[]' value='M'> M
+                        <input class='mb-2 ml-3 text-dark' type='checkbox' name='sizes[]' value='L'> L
+                        <input class='mb-2 ml-3 text-dark' type='checkbox' name='sizes[]' value='XL'> XL
+                        <br>
+                        <label >
+                            Color
+                        </label>
+                        <input class='form-control w-50 mb-2 text-dark' type='text' name='color'>
+                        <label >
+                            Brand
+                        </label>
+                        <input class='form-control w-50 mb-2 text-dark' type='text' name='brand'>
 
                         <label >
                             Product Image

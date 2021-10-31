@@ -31,6 +31,17 @@ class AdminController extends Controller
         $data->quantity=$request->quantity;
         $data->type=$request->type;
         $data->rating=$request->rating;
+        $sz=$request->sizes;
+        // print_r(implode(" ", $sz));
+        $size=implode(" ", $sz);
+        $data->size=$size;
+        // foreach($sz as $size){
+        //     // print_r($sz);
+        //         $data->size=$request->sizes;
+        //         $data->save();
+        // }
+        $data->color=$request->color;
+        $data->brand=$request->brand;
 
         $data->save();
 
@@ -72,10 +83,19 @@ class AdminController extends Controller
         $data->price=$request->price;
         $data->quantity=$request->quantity;
         $data->type=$request->type;
+        
+        $data->size=$request->size;
+        $data->color=$request->color;
+        $data->brand=$request->brand;
+
 
         $data->save();
 
         return redirect()->back()->with('msg','Product updated successfully');
         
+    }
+    public function product_detail($id){
+        $data = product::find($id);
+        return view('user.product_detail',['products'=>$data]);
     }
 }

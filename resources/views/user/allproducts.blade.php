@@ -50,9 +50,9 @@
                 @foreach($products as $pro)
                     <div class="col-lg-4 col-md-4 all {{$pro->type}}">
                       <div class="product-item">
-                        <a href="#"><img src="productimage/{{$pro->image}}" alt="{{$pro->image}}"></a>
+                        <a href="{{url('product_detail',$pro->id)}}"><img src="productimage/{{$pro->image}}" alt="{{$pro->image}}"></a>
                         <div class="down-content">
-                          <a href="#"><h4>{{$pro->title}}</h4></a>
+                          <a href="{{url('product_detail',$pro->id)}}"><h4>{{$pro->title}}</h4></a>
                           <h6>{{$pro->price}}</h6>
                           <p>{{$pro->description}}</p>
                           <ul class="stars">

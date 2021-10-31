@@ -45,4 +45,8 @@ class HomeController extends Controller
         $data = product::where('title', 'like','%'.$search.'%')->get();
         return view("user.home",  ['products'=>$data]);
     }
+    public function favourite($id){
+        $data = product::find($id);
+        return view('user.favourite',['products'=>$data]);
+    }
 }

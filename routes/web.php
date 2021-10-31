@@ -32,6 +32,7 @@ route::get('search',[HomeController::class, 'search']);
 
 
 
+
 // admin
 route::get('products',[AdminController::class, 'products']);
 route::post('uploadproducts',[AdminController::class, 'uploadproducts']);
@@ -39,3 +40,10 @@ route::get('show_products',[AdminController::class, 'show_products']);
 route::get('delete_product/{id}',[AdminController::class, 'delete_product']);
 route::get('edit_products/{id}',[AdminController::class, 'edit_product']);
 route::post('updateproduct',[AdminController::class, 'updateproduct']);
+
+//pro_details
+
+route::get('product_detail/{id}',[AdminController::class, 'product_detail']);
+
+//fav
+route::get('favourite/{id}',[HomeController::class, 'favourite']);
