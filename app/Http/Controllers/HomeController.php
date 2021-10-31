@@ -62,7 +62,7 @@ class HomeController extends Controller
         $data->description=$description;
         $data->price=$price;
         $data->quantity=$quantity;
-        $image=$image;
+        $data->image=$image;
         $data->save();
 
         return redirect()->back()->with('favmsg','Added');

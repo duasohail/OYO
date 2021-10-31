@@ -215,10 +215,10 @@ https://templatemo.com/tm-546-sixteen-clothing
                         
                         <?php if($favs){ ?>
 
-                          <a href="{{url('delete_fav',$products->id)}}" style="border-rdius:0px;" data-toggle="tooltip" data-placement="bottom" title="Favourite"  class='btn btn-outline-danger btn-sm ml-2 p-2 mt-3 rounded-0' > <i class="fa fa-heart text-danger"></i> </a>
+                          <a href="{{url('delete_fav',$products->id)}}" style="border-rdius:0px; font-size:20px;" data-toggle="tooltip" data-placement="bottom" title="Favourite"  class='btn btn-light btn-sm ml-2 mt-3 rounded-0' > <i class="fa fa-heart text-danger"></i> </a>
 
                     <?php }else{?>
-                        <button style="border-rdius:0px;" data-toggle="tooltip" data-placement="bottom" title="Favourite"  class='btn btn-danger btn-sm ml-2 p-2 mt-3 rounded-0' > <i class="fa fa-heart-o" aria-hidden="true"></i> </button>
+                        <button style="border-rdius:0px;font-size:20px;" data-toggle="tooltip" data-placement="bottom" title="Favourite"  class='btn btn-sm ml-2 mt-3 rounded-0 text-danger' > <i class="fa fa-heart-o" aria-hidden="true"></i> </button>
                     <?php } ?>
                       </form>
                     </div>
