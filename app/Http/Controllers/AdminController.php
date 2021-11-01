@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\product;
 use App\Models\favourite;
 
@@ -96,8 +97,19 @@ class AdminController extends Controller
         
     }
     public function product_detail($id){
-        $data = product::find($id);
-        $fav_data = favourite::find($id);
-        return view('user.product_detail',['products'=>$data, 'favs'=>$fav_data]);
+        $userid=Auth::id();
+        $data['product'] = product::find($id);
+        $data['product']['fav'] = favourite::find($id);
+       
+        
+        if($data['product']['fav']){
+            if($data['product']['fav']['user_id']==$userid){
+                return view('user.product_detail',['products'=>$data['product']['fav'], 'products'=>$data['product']]);
+            }
+           
+        }else{
+            return view('user.product_detail',['products'=>$data['product']]);
+        }
+        
     }
 }

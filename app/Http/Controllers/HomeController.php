@@ -46,27 +46,41 @@ class HomeController extends Controller
         $data = product::where('title', 'like','%'.$search.'%')->get();
         return view("user.home",  ['products'=>$data]);
     }
+
+   
     public function favourite(Request $request){
-        $page_id= $request->id;
-        $productdata = product::find($page_id);
-        $id=$productdata['id'];
-        $title=$productdata['title'];
-        $description=$productdata['description'];
-        $price=$productdata['price'];
-        $quantity=$productdata['quantity'];
-        $image=$productdata['image'];
+        $userid=Auth::id();
+        if($userid){
 
-        $data= new favourite; //database table name from model
-        $data->id=$id;
-        $data->title=$title;
-        $data->description=$description;
-        $data->price=$price;
-        $data->quantity=$quantity;
-        $data->image=$image;
-        $data->save();
-
-        return redirect()->back()->with('favmsg','Added');
+            $user=user::find($userid);
+            $page_id= $request->id;
+            $productdata = product::find($page_id);
+            $id=$productdata['id'];
+            $title=$productdata['title'];
+            $description=$productdata['description'];
+            $price=$productdata['price'];
+            $quantity=$productdata['quantity'];
+            $image=$productdata['image'];
+    
+            $data= new favourite; //database table name from model
+            $data->id=$id;
+            $data->title=$title;
+            $data->user_id=$user['id'];
+            $data->user_type=$user['usertype'];
+            $data->description=$description;
+            $data->price=$price;
+            $data->quantity=$quantity;
+            $data->image=$image;
+            $data->save();
+    
+            return redirect()->back()->with('favmsg','');
+        }else{
+            return redirect('login');
+        }
+        
     }
+
+  
 
     public function delete_fav($id){
         $data = favourite::find($id);

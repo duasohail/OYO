@@ -16,6 +16,8 @@ class CreateFavouritesTable extends Migration
         Schema::create('favourites', function (Blueprint $table) {
             $table->id();
             $table->string('title')->nullable();
+            $table->string('user_id')->nullable();
+            $table->string('user_type')->nullable();
             $table->string('description')->nullable();
             $table->string('price')->nullable();
             $table->string('quantity')->nullable();

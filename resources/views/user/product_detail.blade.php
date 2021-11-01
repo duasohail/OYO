@@ -212,8 +212,8 @@ https://templatemo.com/tm-546-sixteen-clothing
                       <form action="{{url('favourite')}}" method='post' enctype='multipart/form-data'>
                       @csrf 
                         <input type="hidden" value="{{$products->id}}" name='id' >
-                        
-                        <?php if($favs){ ?>
+                      
+                        <?php if($products->fav){ ?>
 
                           <a href="{{url('delete_fav',$products->id)}}" style="border-rdius:0px; font-size:20px;" data-toggle="tooltip" data-placement="bottom" title="Favourite"  class='btn btn-light btn-sm ml-2 mt-3 rounded-0' > <i class="fa fa-heart text-danger"></i> </a>
 
